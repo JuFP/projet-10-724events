@@ -1,4 +1,4 @@
-# 724 Events
+# Projet 10 - Intégration web - 724 Events - OpenClassRooms
 
 ## Description
 L'application est le site d'une agence evenementielle.

@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Home from "./index";
+import Menu from "./index";
 
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {
@@ -7,7 +8,7 @@ describe("When Form is created", () => {
     await screen.findByText("Email");
     await screen.findByText("Nom");
     await screen.findByText("Prénom");
-    await screen.findByText("Personel / Entreprise");
+    await screen.findByText("Personnel / Entreprise");
   });
 
   describe("and a click is triggered on the submit button", () => {
@@ -41,4 +42,16 @@ describe("When a page is created", () => {
   it("an event card, with the last event, is displayed", () => {
     // to implement
   })
+});
+
+//test présence des id des liens de navigation dans la page Home
+describe("ID presence", () => {
+  it("should ID be present on the page", () => {
+    render(<Menu />);
+
+    const pageHome = document.body.innerHTML;
+    expect(pageHome).toContain('id="nos-services"');
+    expect(pageHome).toContain('id="nos-realisations"');
+    expect(pageHome).toContain('id="notre-equipe"');
+  });
 });
